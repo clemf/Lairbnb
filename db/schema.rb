@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150325204746) do
 
   create_table "lairs", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "lair_type"
     t.string   "doomsday_devices"
     t.integer  "price"
     t.datetime "created_at",       null: false
