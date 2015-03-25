@@ -6,7 +6,7 @@ describe 'the create a user process' do
     expect(page).to have_content "Create an account"
   end
 
-  it 'has a link on the homepage to create a new user' do
+  it 'renders the form' do
     visit root_path
     click_on "Create an account"
     expect(page).to have_content "Email"
