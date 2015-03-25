@@ -6,10 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Success!"
       redirect_to :root
     else
-      flash[:alert] = "Something went wrong!"
       render :new
     end
 

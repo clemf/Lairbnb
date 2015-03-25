@@ -21,4 +21,15 @@ describe 'the create a user process' do
     click_on "Create Account"
     expect(page).to have_content "successfully"
   end
+
+  it 'will be angry if you try to recreate an already existing account' do
+    user = FactoryGirl.create(:user)
+    visit root_path
+    click_on "Create an account"
+    fill_in "Email", :with => "clem@test.com"
+    fill_in "Password", :with => "testtest"
+    fill_in "Password confirmation", :with => "testtest"
+    click_on "Create Account"
+    expect(page).to have_content "error"
+  end
 end
