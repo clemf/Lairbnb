@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'home#index', as: :authenticated_root
+      root 'lairs#index', as: :authenticated_root
     end
 
     unauthenticated do
@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users
+  resources :users do
+    resources :lairs
+  end
+
+  resources :lairs
 end
