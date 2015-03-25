@@ -5,4 +5,7 @@ class LairsController < ApplicationController
     @lair = Lair.new
   end
 
+  def new
+  end
+
 end

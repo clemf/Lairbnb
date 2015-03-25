@@ -11,10 +11,16 @@ describe 'the create a new lair process' do
   it 'displays the new lair form on the lairs#index page' do
     visit lairs_path
     expect(page).to have_content "Doomsday devices"
-
-
   end
 
-
+  it 'creates a new lair when form is filled out' do
+    visit lairs_path
+    fill_in 'Name', with: "Test Lair"
+    fill_in 'Price', with: "5,000 gold doubloons"
+    fill_in 'Doomsday devices', with: "10 Gigawatt Deathray"
+    fill_in 'Type', with: "Underwater dome"
+    click_on "List lair"
+    expect(page).to have_content "Lair listed"
+  end
 
 end
