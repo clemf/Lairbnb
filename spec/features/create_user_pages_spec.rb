@@ -16,9 +16,9 @@ describe 'the create a user process' do
     visit root_path
     click_on "Create an account"
     fill_in "Email", :with => "clem@test.com"
-    fill_in "Password", :with => "test"
-    fill_in "Confirm Password", :with => "test"
+    fill_in "Password", :with => "testtest"
+    fill_in "Password confirmation", :with => "testtest"
     click_on "Create Account"
-    expect(page).to have_content "Success"
+    expect(page).to have_content "successfully"
   end
 end
