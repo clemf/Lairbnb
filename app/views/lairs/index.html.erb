@@ -7,6 +7,8 @@
       <% if lair.user_id == current_user.id %>
       |
         <%= link_to "Edit", edit_lair_path(lair) %>
+      |
+        <%= link_to "Delete", lair_path(lair), :method => :delete %>
       <% end %>
 
     </li>

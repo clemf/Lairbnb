@@ -35,5 +35,16 @@ describe "the edit lair process" do
     expect(page).to have_content "Clem's cuddle puddle"
   end
 
+  it "will display the delete lair button if the user owns the lair" do
+    lair = FactoryGirl.create(:lair, :user_id => user.id)
+    visit lairs_path
+    expect(page).to have_content "Delete"
+  end
+
+  it "won\'t display the delete lair button if the user does not own the lair" do
+    lair = FactoryGirl.create(:lair, :user_id => 999999)
+    visit lairs_path
+    expect(page).to have_no_content "Delete"
+  end
 
 end
