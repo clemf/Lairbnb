@@ -14,7 +14,8 @@ describe "the edit lair process" do
   end
 
   it 'wont show an edit lair button if user doesnt own the lair' do
-    lair = FactoryGirl.create(:lair, :user_id => 999999)
+    wrong_user = FactoryGirl.create(:user, :email => "wrong@user.com")
+    lair = FactoryGirl.create(:lair, :user_id => wrong_user.id)
     visit lairs_path
     expect(page).to have_no_content "Edit"
   end
@@ -42,7 +43,8 @@ describe "the edit lair process" do
   end
 
   it "won\'t display the delete lair button if the user does not own the lair" do
-    lair = FactoryGirl.create(:lair, :user_id => 999999)
+    wrong_user = FactoryGirl.create(:user, :email => "wrong@user.com")
+    lair = FactoryGirl.create(:lair, :user_id => wrong_user.id)
     visit lairs_path
     expect(page).to have_no_content "Delete"
   end

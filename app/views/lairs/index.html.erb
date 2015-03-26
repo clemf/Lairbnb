@@ -10,7 +10,7 @@
       |
         <%= link_to "Delete", lair_path(lair), :method => :delete %>
       <% else %>
-        <%= link_to "Book Lair", new_lair_booking_path(lair) %>
+        <%= link_to "Book This Lair", new_lair_booking_path(lair) %>
       <% end %>
         <p>Owned by: <%= User.find(lair.user_id).email %></p>
         <p>Lair type: <%= lair.lair_type %></p>

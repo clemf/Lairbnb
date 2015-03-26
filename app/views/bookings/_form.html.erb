@@ -1,0 +1,7 @@
+<%= form_for [@lair, @booking] do |f| %>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %>
+  <%= f.submit "Book this lair!"%>
+<% end %>

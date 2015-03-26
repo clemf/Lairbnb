@@ -14,8 +14,18 @@ describe 'the book a lair process' do
   end
 
   it 'will not show a book lair button when user owns lair' do
-    FactoryGirl.create(:lair, :user_id => 999999)
+    wrong_user = FactoryGirl.create(:user, :email => "wrong@user.com")
+    lair = FactoryGirl.create(:lair, :user_id => wrong_user.id)
     visit lairs_path
     expect(page).to have_content 'Book'
   end
+
+  it 'will take user to book lair page when book lair link clicked' do
+    wrong_user = FactoryGirl.create(:user, :email => "wrong@user.com")
+    lair = FactoryGirl.create(:lair, :user_id => wrong_user.id)
+    visit lairs_path
+    expect(page).to have_content 'Book'
+  end
+
+
 end
