@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 describe 'the create a new lair process' do
-  let(:user) { FactoryGirl.create(:user)}
+  let(:user) { FactoryGirl.create(:user) }
 
   before do
     sign_in(user)

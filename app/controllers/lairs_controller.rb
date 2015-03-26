@@ -19,8 +19,17 @@ class LairsController < ApplicationController
     end
   end
 
-  private
-    def lair_params
-      params.require(:lair).permit(:name, :lair_type, :price, :doomsday_devices)
+  def update
+    @lair = Lair.find(params[:id])
+    if @lair.update(lair_params)
+      direct_to lairs_path
+    else
+      render :edit
     end
+  end
+
+private
+  def lair_params
+    params.require(:lair).permit(:name, :lair_type, :price, :doomsday_devices)
+  end
 end
