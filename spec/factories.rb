@@ -1,5 +1,10 @@
 FactoryGirl.define do
 
+  factory :booking do
+
+  end
+
+
   factory(:user) do
     email('clem@test.com')
     password('testtest')

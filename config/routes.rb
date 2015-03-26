@@ -15,5 +15,7 @@ Rails.application.routes.draw do
     resources :lairs
   end
 
-  resources :lairs
+  resources :lairs do
+    resources :bookings
+  end
 end
