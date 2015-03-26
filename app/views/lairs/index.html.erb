@@ -3,13 +3,17 @@
 <ul>
   <% @lairs.each do |lair| %>
     <li>
-      <%= lair.name %>
+      <div class="well">
+      <h4><%= lair.name %></h4>
       <% if lair.user_id == current_user.id %>
-      |
         <%= link_to "Edit", edit_lair_path(lair) %>
       |
         <%= link_to "Delete", lair_path(lair), :method => :delete %>
       <% end %>
+        <p>Lair type: <%= lair.lair_type %></p>
+        <p>Lair price: <%= lair.price %></p>
+        <p>Doomsday devices: <%= lair.doomsday_devices %></p>
+      </div>
 
     </li>
   <% end %>
