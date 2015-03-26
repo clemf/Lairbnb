@@ -26,5 +26,14 @@ describe "the edit lair process" do
     expect(page).to have_content "Doomsday devices"
   end
 
+  it "will update the entry correclty" do
+    lair = FactoryGirl.create(:lair, :user_id => user.id)
+    visit lairs_path
+    click_on "Edit"
+    fill_in "Name", :with => "Clem's cuddle puddle"
+    click_on "Update Lair"
+    expect(page).to have_content "Clem's cuddle puddle"
+  end
+
 
 end
