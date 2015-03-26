@@ -10,6 +10,7 @@ class LairsController < ApplicationController
 
   def create
     @lair = Lair.new(lair_params)
+    @lair.user_id = current_user.id
     if @lair.save
       flash[:notice] = "Lair listed."
       redirect_to lairs_path

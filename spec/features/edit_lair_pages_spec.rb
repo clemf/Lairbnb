@@ -19,6 +19,12 @@ describe "the edit lair process" do
     expect(page).to have_no_content "Edit"
   end
 
+  it "will go to the lair edit page if you click on the link" do
+    lair = FactoryGirl.create(:lair, :user_id => user.id)
+    visit lairs_path
+    click_on "Edit"
+    expect(page).to have_content "Doomsday devices"
+  end
 
 
 end
