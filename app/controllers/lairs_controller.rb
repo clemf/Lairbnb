@@ -23,7 +23,7 @@ class LairsController < ApplicationController
   def update
     @lair = Lair.find(params[:id])
     if @lair.update(lair_params)
-      direct_to lairs_path
+      redirect_to lairs_path
     else
       render :edit
     end

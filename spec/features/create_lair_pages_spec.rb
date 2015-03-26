@@ -19,7 +19,7 @@ describe 'the create a new lair process' do
     fill_in 'Price', with: "5,000 gold doubloons"
     fill_in 'Doomsday devices', with: "10 Gigawatt Deathray"
     fill_in 'Lair type', with: "Underwater dome"
-    click_on "List Lair"
+    click_on "Create Lair"
     expect(page).to have_content "Lair listed"
   end
 

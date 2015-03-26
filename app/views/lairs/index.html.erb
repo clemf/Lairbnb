@@ -3,8 +3,9 @@
 <ul>
   <% @lairs.each do |lair| %>
     <li>
-      <%= lair.name %>" | "
+      <%= lair.name %>
       <% if lair.user_id == current_user.id %>
+      |
         <%= link_to "Edit", edit_lair_path(lair) %>
       <% end %>
 
