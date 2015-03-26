@@ -12,6 +12,7 @@
       <% else %>
         <%= link_to "Book Lair", new_lair_booking_path(lair) %>
       <% end %>
+        <p>Owned by: <%= User.find(lair.user_id).email %></p>
         <p>Lair type: <%= lair.lair_type %></p>
         <p>Lair price: <%= lair.price %></p>
         <p>Doomsday devices: <%= lair.doomsday_devices %></p>
