@@ -33,6 +33,15 @@ class LairsController < ApplicationController
     @lair = Lair.find(params[:id])
   end
 
+  def destroy
+    @lair = Lair.find(params[:id])
+    if @lair.destroy
+      redirect_to lairs_path
+    else
+      redirect_to lair_path(@lair)
+    end
+  end
+
 private
   def lair_params
     params.require(:lair).permit(:name, :lair_type, :price, :doomsday_devices)

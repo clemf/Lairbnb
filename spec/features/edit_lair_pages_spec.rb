@@ -47,4 +47,11 @@ describe "the edit lair process" do
     expect(page).to have_no_content "Delete"
   end
 
+  it "will update the entry correclty" do
+    lair = FactoryGirl.create(:lair, :user_id => user.id)
+    visit lairs_path
+    click_on "Delete"
+    expect(page).to have_no_content "Test lair"
+  end
+
 end
